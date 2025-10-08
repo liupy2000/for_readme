@@ -32,11 +32,11 @@ All tests are executed using **MATLAB R2023b**.
 ├── 2 Setting1/                    # Numerical study-Setting (I)
 │   ├── baselines/                    # Source code for TME, TR, and VPCR
 │   ├── LTGP/                         # Source code for LTGP-ME
-│   └── main_setting1.m                   # Main script
+│   └── main_setting1.m               # Main script
 ├── 3 Setting2/                    # Numerical study-Setting (II)
 │   ├── baselines/                    # Source code for TME, TR, and VPCR
 │   ├── LTGP/                         # Source code for LTGP-ME
-│   └── main_setting2.m                   # Main script
+│   └── main_setting2.m               # Main script
 ├── bspline/                       # Packages for functional data analysis
 ├── tensor_toolbox-c3.5/           # Packages for tensor data analysis
 ├── utilities/                     # General helper functions and reusable utilities
