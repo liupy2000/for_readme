@@ -1,51 +1,45 @@
 # Functional Depth Methods — Code & Performance Tests
 
-This repository contains the implementation and performance evaluation of several **functional depth methods**. Functional depth is a statistical concept used to measure how “central” or “outlying” a function is within a set of functions. It provides a way to order functional data from the most typical (deepest) to the most unusual (shallowest), enabling tasks such as **outlier detection** and **robust estimation**.
+This repository contains the implementation and performance evaluation of several methods for **spatial profile analysis**. 
+It provides reproducible MATLAB scripts to replicate the numerical experiments and case studies reported in the paper **Spatial In-Profile Monitoring via Latent Tensor Gaussian Process with Mixed Effects**.
 
 ## Methods Included
-- **BD** — Band Depth  
-- **WBD** — Weighted Band Depth based on shape distance of original functional data
-- **MBD** — Modified Band Depth  
-- **WMBD** — Weighted Modified Band Depth based on shape distance of original functional data  
-- **FUNTA**  - Functional Tangent Angle Pseudo-Depth
-- **rFUNTA**  - Robust Functional Tangent Angle Pseudo-Depth
-- **WBD (1st Order Derivative)** — Weighted Band Depth based on shape distance of first-order derivative of functional data
-- **WMBD (1st Order Derivative)** — Weighted Modified Band Depth based on shape distance of first-order derivative of functional data
+The repository implements and benchmarks the following models:
+- **LTGP-ME** — Latent Tensor Gaussian Process with Mixed Effects  
+- **TME** — Tensor Mixed Effects Model  
+- **TR** — Tensor Regression  
+- **VPCR** — Vectorized PCA Regression  
 
-## Experiments
-1. **Outlier Detection**
-   - 15 simulated model datasets  
-   - 2 real-world datasets  
-
-2. **Robust Mean Estimation**
-   - 6 simulated model datasets  
 
 ## Usage
-The `test` folder contains MATLAB scripts representing different test cases.  
-Each `.m` file under `test/` corresponds to one test case, which may use:
-- **Simulated data** generated within the test case  
-- **Real-world data** loaded from the `data/` folder (if required)  
+Each of the top three folders (`1 case/`, `2 Setting1/`, `3 Setting2/`) contains a main MATLAB script corresponding to one experiment setup.
 
-All tests are executed using **MATLAB R2018b**.  
-After each run, results are stored in the variable `whole_result` for further inspection.
+Inside each folder:
+- `main_case.m` — reproduces **Figure 10** (real-world case)  
+- `main_setting1.m` — reproduces **Figures 4(a)** and **5(a)** (Setting I)  
+- `main_setting2.m` — reproduces **Figures 4(b)** and **5(b)** (Setting II)
 
-**Special Note:**  
-In **Outlier Detection Model 15**, the test reads simulated data from two files:
-- `Y_out_situation2.txt` — Outlier curves  
-- `Y_nor_situation2.txt` — Normal curves  
+All tests are executed using **MATLAB R2023b**.  
 
-These datasets were generated following the parameters specified in:  
-> Kuhnt, S., & Rehage, A. (2016). *An angle-based multivariate functional pseudo-depth for shape outlier detection*. Journal of Multivariate Analysis, 146, 325–340.
-You can download the generated data files from [this folder](https://drive.google.com/drive/folders/1ejKdfcdb1HbNSCe9rpPAiWkkUcqqPjSX?usp=share_link) on Google drive.
 
 ## Repository Structure
 ```plaintext
-├── data/                          # Simulated and real-world datasets
-├── src/                           # Source code for functional depth methods
-├── test/
-│   ├── outlier_detection/         # Scripts for outlier detection experiments
-│   └── robust_mean_estimation/    # Scripts for robust mean estimation experiments
-├── .gitignore
+├── 1 case/                        # Real-world case study
+│   ├── baselines/                    # Source code for TME, TR, and VPCR
+│   ├── LTGP/                         # Source code for LTGP-ME
+│   ├── data.mat                      # Source data from the additive manufacturing
+│   └── main_case_m                   # Main script
+├── 2 Setting1/                    # Numerical study-Setting (I)
+│   ├── baselines/                    # Source code for TME, TR, and VPCR
+│   ├── LTGP/                         # Source code for LTGP-ME
+│   └── main_case_m                   # Main script
+├── 3 Setting2/                    # Numerical study-Setting (II)
+│   ├── baselines/                    # Source code for TME, TR, and VPCR
+│   ├── LTGP/                         # Source code for LTGP-ME
+│   └── main_case_m                   # Main script
+├── bspline/                       # Packages for functional data analysis
+├── tensor_toolbox-c3.5/           # Packages for tensor data analysis
+├── utilities/                     # General helper functions and reusable utilities
 └── README.md
 ```
 
