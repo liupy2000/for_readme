@@ -1,4 +1,4 @@
-# Functional Depth Methods — Code & Performance Tests
+# Latent Tensor Gaussian Process
 
 This repository contains the implementation and performance evaluation of several methods for **spatial profile analysis**. 
 It provides reproducible MATLAB scripts to replicate the numerical experiments and case studies reported in the paper **Spatial In-Profile Monitoring via Latent Tensor Gaussian Process with Mixed Effects**.
