@@ -38,7 +38,7 @@ All tests are executed using **MATLAB R2023b**.
 │   ├── LTGP/                         # Source code for LTGP-ME
 │   └── main_setting2.m               # Main script
 ├── bspline/                       # Packages for functional data analysis
-├── tensor_toolbox-c3.5/           # Packages for tensor data analysis
+├── tensor_toolbox-v3.5/           # Packages for tensor data analysis
 ├── utilities/                     # General helper functions and reusable utilities
 └── README.md
 ```
